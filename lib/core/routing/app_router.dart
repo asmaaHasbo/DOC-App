@@ -7,7 +7,7 @@ class AppRouter {
   Route generateRoute(RouteSettings settings){
     switch (settings.name) {
       case Routes.onboarding:
-      return MaterialPageRoute(builder: (_) =>OnboardingScreen());
+      return MaterialPageRoute(builder: (_) => OnboardingScreen());
      
       case '/login':
       return MaterialPageRoute(builder: (_) =>  LoginScreen());
