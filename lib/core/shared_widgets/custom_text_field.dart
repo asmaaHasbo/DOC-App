@@ -15,12 +15,13 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        fillColor: AppColors.borderColor,
+        fillColor: AppColors.grayFD,
         labelText: labelText,
+        filled: true,
         labelStyle: AppStyles.font14W500Grayc2,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16.0.w),
-          borderSide: BorderSide(color: AppColors.gray9E, width: 1.0.w),
+          borderSide: BorderSide(color: AppColors.borderColor, width: 1.0.w),
     
         ),
         focusedBorder: OutlineInputBorder(
@@ -29,7 +30,7 @@ class CustomTextField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16.0.w),
-          borderSide: BorderSide(color: AppColors.gray9E, width: 1.0.w),
+          borderSide: BorderSide(color: AppColors.borderColor, width: 1.0.w),
         ),
       ),
     );
