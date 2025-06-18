@@ -11,6 +11,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: Padding(
         padding: EdgeInsets.all(20.0.w),
         child: Column(
@@ -82,7 +83,9 @@ class OnboardingScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigate to the next screen
-                context.pushNamed(Routes.loginScreen); // Adjust the route as needed
+                context.pushNamed(
+                  Routes.loginScreen,
+                ); // Adjust the route as needed
               },
 
               style: ElevatedButton.styleFrom(

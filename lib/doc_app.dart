@@ -17,12 +17,14 @@ class DocApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         title: 'Doc App',
+      
         theme: ThemeData(
           primaryColor:  AppColors.primary,
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false, 
-        initialRoute: Routes.onboarding,   
+        initialRoute: Routes.loginScreen,   
+      
         onGenerateRoute: appRouter.generateRoute,
          ),
      
