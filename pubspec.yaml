@@ -39,6 +39,10 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.1.0
   flutter_native_splash: ^2.4.6
+  json_annotation: ^4.9.0
+  freezed_annotation: ^3.0.0
+  dio: ^5.8.0+1
+  pretty_dio_logger: ^1.4.0
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +54,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  json_serializable: ^6.9.5
+  build_runner: ^2.5.1
+  freezed: ^3.0.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
