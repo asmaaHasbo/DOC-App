@@ -11,8 +11,8 @@ class DioFactory {
 
     if (dio == null) {
       dio = Dio();
-      dio!..options.connectTimeout = timeOut;
-      dio!..options.connectTimeout = timeOut;
+      dio!.options.connectTimeout = timeOut;
+      dio!.options.receiveTimeout = timeOut;
 
       addDioInterceptor();
       return dio!;
@@ -25,9 +25,9 @@ class DioFactory {
     dio?.interceptors.add(
       PrettyDioLogger(
         requestBody: true ,
-        requestHeader: true,
+        // requestHeader: true,
         responseBody: true,
-        responseHeader: true,
+        // responseHeader: true,
         error: true ,
       ),
     );
