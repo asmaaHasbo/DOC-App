@@ -2,6 +2,8 @@ import 'package:doc_app/core/di/dependency_injection.dart';
 import 'package:doc_app/core/routing/routes.dart';
 import 'package:doc_app/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:doc_app/features/auth/login/ui/login_screen.dart';
+import 'package:doc_app/features/auth/sign_up/logic/cubit/sign_up_cubit.dart';
+import 'package:doc_app/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:doc_app/features/home/ui/home_screen.dart';
 import 'package:doc_app/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +21,24 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
 
       case Routes.loginScreen:
-        return MaterialPageRoute(builder: (_) => BlocProvider(
-          create: (context) => getIt<LoginCubit>(),
-          child: LoginScreen(),
-        ));
-      
-       case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => getIt<LoginCubit>(),
+                child: LoginScreen(),
+              ),
+        );
+      case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
 
+      case Routes.signUpScreen:
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => getIt<SignUpCubit>(),
+                child: SignUpScreen(),
+              ),
+        );
 
       default:
         // Unknown route

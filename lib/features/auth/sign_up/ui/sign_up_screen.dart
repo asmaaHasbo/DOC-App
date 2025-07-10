@@ -1,21 +1,20 @@
+import 'package:doc_app/features/auth/sign_up/logic/cubit/sign_up_cubit.dart';
+import 'package:doc_app/features/auth/sign_up/ui/widgets/sign_up_bloc_listener.dart';
+import 'package:doc_app/features/auth/sign_up/ui/widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:doc_app/core/themes/colors/app_colors.dart';
 import 'package:doc_app/core/themes/colors/styles/styles.dart';
-import 'package:doc_app/features/auth/login/data/models/login_request_model.dart';
-import 'package:doc_app/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:doc_app/features/auth/login/ui/widgets/dont_have_account.dart';
-import 'package:doc_app/features/auth/login/ui/widgets/email_and_password.dart';
-import 'package:doc_app/features/auth/login/ui/widgets/login_bloc_listener.dart';
 import 'package:doc_app/features/auth/login/ui/widgets/trems_conditions.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-class SignUpScreeen extends StatelessWidget {
-  const SignUpScreeen({super.key});
+
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-     return SafeArea(
+    return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -33,7 +32,8 @@ class SignUpScreeen extends StatelessWidget {
                 ),
                 SizedBox(height: 40.h),
 
-                EmailAndPassword(),
+                //----------- form -------------------------
+                SignUpForm(),
                 SizedBox(height: 16.h),
 
                 //------------------------------- forget password ----------------------
@@ -74,26 +74,15 @@ class SignUpScreeen extends StatelessWidget {
                 ),
                 SizedBox(height: 24.h),
 
-                //----------------------------------- LOGIN BTN ----------------------
+                //----------------------------------- sign up BTN ----------------------
                 ElevatedButton(
                   onPressed: () {
                     if (context
-                        .read<LoginCubit>()
-                        .formKey
+                        .read<SignUpCubit>()
+                        .signUpFormKey
                         .currentState!
                         .validate()) {
-                      // If the form is valid, proceed with login
-                      context.read<LoginCubit>().emitLoginStates(
-                        LoginRequestModel(
-                          email:
-                              context.read<LoginCubit>().emailController.text,
-                          password:
-                              context
-                                  .read<LoginCubit>()
-                                  .passwordController
-                                  .text,
-                        ),
-                      );
+                      context.read<SignUpCubit>().emitSignUpStates();
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -104,7 +93,7 @@ class SignUpScreeen extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'Login',
+                    'Sign Up',
                     style: AppStyles.font16W600Blue.copyWith(
                       color: Colors.white,
                     ),
@@ -119,7 +108,7 @@ class SignUpScreeen extends StatelessWidget {
                 DontHaveAccount(),
 
                 //-----------------------------------
-                LoginBlocListener(),
+                 SignUpBlocListener()
               ],
             ),
           ),

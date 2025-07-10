@@ -1,14 +1,11 @@
 import 'package:doc_app/core/helper/extensions.dart';
-import 'package:doc_app/core/routing/routes.dart';
 import 'package:doc_app/core/themes/colors/app_colors.dart';
 import 'package:doc_app/core/themes/colors/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DontHaveAccount extends StatelessWidget {
-  const DontHaveAccount({
-    super.key,
-  });
+class AlreadyHaveAccount extends StatelessWidget {
+  const AlreadyHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +13,16 @@ class DontHaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Don\'t have an account?',
+          'Already have an account yet?',
           style: AppStyles.font12W400Gray9E.copyWith(
             fontSize: 12.sp,
           ),
         ),
         SizedBox(width: 5.w),
         InkWell(
-          onTap: () => context.pushNamed(Routes.signUpScreen),
+          onTap: ()=> context.pop(),
           child: Text(
-            'Sign Up',
+            'Login',
             style: TextStyle(
               fontSize: 12.sp,
               fontWeight: FontWeight.w400,
@@ -35,5 +32,6 @@ class DontHaveAccount extends StatelessWidget {
         ),
       ],
     );
+ 
   }
 }
