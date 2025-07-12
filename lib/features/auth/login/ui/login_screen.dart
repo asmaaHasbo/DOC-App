@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print
 import 'package:doc_app/core/themes/colors/app_colors.dart';
 import 'package:doc_app/core/themes/colors/styles/styles.dart';
-import 'package:doc_app/features/auth/login/data/models/login_request_model.dart';
 import 'package:doc_app/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:doc_app/features/auth/login/ui/widgets/dont_have_account.dart';
 import 'package:doc_app/features/auth/login/ui/widgets/email_and_password.dart';
@@ -87,15 +86,7 @@ class LoginScreen extends StatelessWidget {
                         .validate()) {
                       // If the form is valid, proceed with login
                       context.read<LoginCubit>().emitLoginStates(
-                        LoginRequestModel(
-                          email:
-                              context.read<LoginCubit>().emailController.text,
-                          password:
-                              context
-                                  .read<LoginCubit>()
-                                  .passwordController
-                                  .text,
-                        ),
+                      
                       );
                     }
                   },

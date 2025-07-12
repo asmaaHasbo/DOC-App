@@ -15,11 +15,14 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController passwordController = TextEditingController();
 
   /// Emits the login states based on the response from the login repository.
- Future<void> emitLoginStates(LoginRequestModel loginRequestModel) async {
+  Future<void> emitLoginStates() async {
     print('loading');
 
     emit(LoginState.loading());
-    final response = await _loginRepo.login(loginRequestModel);
+    final response = await _loginRepo.login(
+      LoginRequestModel(email: emailController.text, 
+      password: passwordController.text),
+    );
 
     response.when(
       success: (loginResponseModel) {
