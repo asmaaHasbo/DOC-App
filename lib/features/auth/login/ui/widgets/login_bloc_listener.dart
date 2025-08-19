@@ -16,7 +16,6 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       //------------ يعني ابدا تليسين و اشتغمل لما ال state تكون loading or success --------
-      
       listener: (context, state) {
         print('Listener received state: $state');
         state.whenOrNull(
@@ -25,12 +24,11 @@ class LoginBlocListener extends StatelessWidget {
               context: context,
               builder:
                   (context) => Center(
-                      child: CircularProgressIndicator(
-                        color: AppColors.primary,
-                        // strokeWidth: 2.0.sp,
-                      ),
+                    child: CircularProgressIndicator(
+                      color: AppColors.primary,
+                      // strokeWidth: 2.0.sp,
                     ),
-                  
+                  ),
             );
           },
 
