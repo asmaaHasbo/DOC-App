@@ -8,7 +8,7 @@ on:
       - main
 
 jops:
-  distribute_to_firebase:
+  distribute_to_firebasse:
     runs-on: ubuntu-latest
     steps:
       - name: checkout my repo codes
