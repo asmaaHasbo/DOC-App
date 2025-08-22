@@ -7,7 +7,7 @@ on:
     branches:
       - main
 
-jops:
+jobs:
   distribute_to_firebasse:
     runs-on: ubuntu-latest
     steps:
