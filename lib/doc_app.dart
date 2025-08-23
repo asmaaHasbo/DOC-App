@@ -23,7 +23,7 @@ class DocApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false, 
-        initialRoute: Routes.loginScreen,   
+        initialRoute: Routes.homeScreen,   
       
         onGenerateRoute: appRouter.generateRoute,
          ),
