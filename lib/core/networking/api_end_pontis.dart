@@ -3,5 +3,5 @@ class ApiEndPontis {
   static const String login = '/auth/login';
   static const String signUp = '/auth/register';
 
-
+  static const String specialization = '/specialization/index';
 }

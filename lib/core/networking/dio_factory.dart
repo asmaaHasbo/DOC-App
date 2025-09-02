@@ -24,9 +24,9 @@ class DioFactory {
   static void addDioInterceptor() {
     dio?.interceptors.add(
       PrettyDioLogger(
-        requestBody: true ,
+        requestBody: true,
         responseBody: true,
-        error: true ,
+        error: true,
         // requestHeader: true,
         // responseHeader: true,
       ),

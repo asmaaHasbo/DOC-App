@@ -28,7 +28,7 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: 20.h),
                 Text(
                   'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-                  style: AppStyles.font14W400Gray,
+                  style: AppStyles.font14W400Gray75,
                 ),
                 SizedBox(height: 40.h),
 
@@ -108,7 +108,7 @@ class SignUpScreen extends StatelessWidget {
                 DontHaveAccount(),
 
                 //-----------------------------------
-                 SignUpBlocListener()
+                SignUpBlocListener(),
               ],
             ),
           ),

@@ -3,7 +3,6 @@ import 'package:json_annotation/json_annotation.dart';
 part 'sign_up_request_model.g.dart';
 
 @JsonSerializable()
-
 class SignUpRequestModel {
   final String name;
   final String email;
@@ -21,7 +20,6 @@ class SignUpRequestModel {
     required this.password,
     required this.passwordConfirmation,
   });
-
 
   Map<String, dynamic> toJson() => _$SignUpRequestModelToJson(this);
 }

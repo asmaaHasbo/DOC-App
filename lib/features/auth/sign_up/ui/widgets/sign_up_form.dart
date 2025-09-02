@@ -126,7 +126,7 @@ class _SignUpFormState extends State<SignUpForm> {
             suffixIcon: IconButton(
               icon: Icon(
                 isObscure ? Icons.visibility_off : Icons.visibility,
-                color: isObscure ? AppColors.gray : AppColors.primary,
+                color: isObscure ? AppColors.gray75 : AppColors.primary,
               ),
               onPressed: () {
                 setState(() {
@@ -150,7 +150,7 @@ class _SignUpFormState extends State<SignUpForm> {
             suffixIcon: IconButton(
               icon: Icon(
                 isObscure ? Icons.visibility_off : Icons.visibility,
-                color: isObscure ? AppColors.gray : AppColors.primary,
+                color: isObscure ? AppColors.gray75 : AppColors.primary,
               ),
               onPressed: () {
                 setState(() {

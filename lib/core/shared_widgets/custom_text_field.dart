@@ -27,7 +27,10 @@ class CustomTextField extends StatelessWidget {
       obscureText: isTextObsecure ?? false,
       decoration: InputDecoration(
         isDense: true, // يقلل الارتفاع والمساحات الداخلية
-        contentPadding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 18.0.h),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 20.0.w,
+          vertical: 18.0.h,
+        ),
         fillColor: AppColors.grayFD,
         filled: true,
         hintText: hintText,

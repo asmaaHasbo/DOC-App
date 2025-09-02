@@ -20,8 +20,10 @@ class LoginCubit extends Cubit<LoginState> {
 
     emit(LoginState.loading());
     final response = await _loginRepo.login(
-      LoginRequestModel(email: emailController.text, 
-      password: passwordController.text),
+      LoginRequestModel(
+        email: emailController.text,
+        password: passwordController.text,
+      ),
     );
 
     response.when(

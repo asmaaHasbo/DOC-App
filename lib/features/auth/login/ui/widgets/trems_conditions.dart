@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TermsConditions extends StatelessWidget {
-  const TermsConditions({
-    super.key,
-  });
+  const TermsConditions({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +13,7 @@ class TermsConditions extends StatelessWidget {
         children: [
           TextSpan(
             text: 'By logging, you agree to our',
-            style: AppStyles.font12W400Gray9E.copyWith(
-              fontSize: 12.sp,
-            ),
+            style: AppStyles.font12W400Gray9E.copyWith(fontSize: 12.sp),
           ),
           TextSpan(
             text: ' Terms & Conditions ',
@@ -29,9 +25,7 @@ class TermsConditions extends StatelessWidget {
           ),
           TextSpan(
             text: ' and ',
-            style: AppStyles.font12W400Gray9E.copyWith(
-              fontSize: 12.sp,
-            ),
+            style: AppStyles.font12W400Gray9E.copyWith(fontSize: 12.sp),
           ),
           TextSpan(
             text: 'Privacy Policy.',

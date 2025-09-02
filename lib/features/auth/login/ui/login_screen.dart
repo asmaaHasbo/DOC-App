@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(height: 20.h),
                 Text(
                   'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
-                  style: AppStyles.font14W400Gray,
+                  style: AppStyles.font14W400Gray75,
                 ),
                 SizedBox(height: 40.h),
 
@@ -85,9 +85,7 @@ class LoginScreen extends StatelessWidget {
                         .currentState!
                         .validate()) {
                       // If the form is valid, proceed with login
-                      context.read<LoginCubit>().emitLoginStates(
-                      
-                      );
+                      context.read<LoginCubit>().emitLoginStates();
                     }
                   },
                   style: ElevatedButton.styleFrom(

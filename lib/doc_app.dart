@@ -3,6 +3,7 @@ import 'package:doc_app/core/routing/routes.dart';
 import 'package:doc_app/core/themes/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // ignore: must_be_immutable
 class DocApp extends StatelessWidget {
@@ -17,18 +18,22 @@ class DocApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         title: 'Doc App',
-      
+
         theme: ThemeData(
-          primaryColor:  AppColors.primary,
+          textTheme: GoogleFonts.interTextTheme(),
+          primaryColor: AppColors.primary,
           useMaterial3: true,
         ),
-        debugShowCheckedModeBanner: false, 
-        initialRoute: Routes.homeScreen,   
-      
-        onGenerateRoute: appRouter.generateRoute,
-         ),
-     
-    );
+        debugShowCheckedModeBanner: false,
+        initialRoute: Routes.homeScreen,
 
-     }
+        onGenerateRoute: appRouter.generateRoute,
+      ),
+    );
+  }
 }
+
+
+
+
+

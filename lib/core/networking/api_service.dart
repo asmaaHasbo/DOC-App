@@ -19,5 +19,7 @@ abstract class ApiService {
 
   //---------------- sign up api ------------
   @POST(ApiEndPontis.signUp)
-  Future<SignUpResponseModel> singUp(@Body() SignUpRequestModel signUpRequestModel);
+  Future<SignUpResponseModel> singUp(
+    @Body() SignUpRequestModel signUpRequestModel,
+  );
 }

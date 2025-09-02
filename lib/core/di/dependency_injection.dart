@@ -19,10 +19,9 @@ Future<void> setupGetIt() async {
 
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
-// api service  بتعود علي  signUpRepo اللي في القوسين بتوع ال  get it  ال 
-//------- cupit وكذلك مع ال  api service  عاوزه  login repo conctructor  لان ال 
+  // api service  بتعود علي  signUpRepo اللي في القوسين بتوع ال  get it  ال
+  //------- cupit وكذلك مع ال  api service  عاوزه  login repo conctructor  لان ال
 
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
-
 }

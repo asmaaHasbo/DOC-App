@@ -5,9 +5,11 @@ import 'package:doc_app/features/auth/sign_up/data/models/sign_up_response_model
 
 class SignUpRepo {
   ApiService apiService;
-  SignUpRepo( this.apiService);
+  SignUpRepo(this.apiService);
 
-  Future<ApiResult<SignUpResponseModel>> signUp(SignUpRequestModel signUpRequestModel) async {
+  Future<ApiResult<SignUpResponseModel>> signUp(
+    SignUpRequestModel signUpRequestModel,
+  ) async {
     try {
       final response = await apiService.singUp(signUpRequestModel);
       return ApiResult.success(response);

@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DontHaveAccount extends StatelessWidget {
-  const DontHaveAccount({
-    super.key,
-  });
+  const DontHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +15,7 @@ class DontHaveAccount extends StatelessWidget {
       children: [
         Text(
           'Don\'t have an account?',
-          style: AppStyles.font12W400Gray9E.copyWith(
-            fontSize: 12.sp,
-          ),
+          style: AppStyles.font12W400Gray9E.copyWith(fontSize: 12.sp),
         ),
         SizedBox(width: 5.w),
         InkWell(

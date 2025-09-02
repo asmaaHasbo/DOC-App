@@ -14,13 +14,11 @@ class AlreadyHaveAccount extends StatelessWidget {
       children: [
         Text(
           'Already have an account yet?',
-          style: AppStyles.font12W400Gray9E.copyWith(
-            fontSize: 12.sp,
-          ),
+          style: AppStyles.font12W400Gray9E.copyWith(fontSize: 12.sp),
         ),
         SizedBox(width: 5.w),
         InkWell(
-          onTap: ()=> context.pop(),
+          onTap: () => context.pop(),
           child: Text(
             'Login',
             style: TextStyle(
@@ -32,6 +30,5 @@ class AlreadyHaveAccount extends StatelessWidget {
         ),
       ],
     );
- 
   }
 }

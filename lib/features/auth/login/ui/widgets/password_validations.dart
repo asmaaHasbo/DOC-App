@@ -60,14 +60,14 @@ class PasswordValidations extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 3.w,
-          backgroundColor: isValidted ? Colors.green : AppColors.gray,
+          backgroundColor: isValidted ? Colors.green : AppColors.gray75,
         ),
         SizedBox(width: 5.w),
         Text(
           text,
           style: TextStyle(
             fontSize: 13.sp,
-            color: isValidted ? Colors.green : AppColors.gray,
+            color: isValidted ? Colors.green : AppColors.gray75,
             decoration: isValidted ? TextDecoration.lineThrough : null,
             decorationColor: Colors.green,
             decorationThickness: 2.w,

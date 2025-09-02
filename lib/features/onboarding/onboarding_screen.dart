@@ -74,7 +74,7 @@ class OnboardingScreen extends StatelessWidget {
 
             Text(
               'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-              style: AppStyles.font14W400Gray,
+              style: AppStyles.font14W400Gray75,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 30.h),

@@ -10,12 +10,11 @@ class ApiErrorModel {
   final int code;
 
   ApiErrorModel({
-    required this.code ,
-    required this.data ,
+    required this.code,
+    required this.data,
     required this.message,
-    required this.status
+    required this.status,
   });
 
-  factory ApiErrorModel.fromJson(json) => _$ApiErrorModelFromJson(json) ;
-
+  factory ApiErrorModel.fromJson(json) => _$ApiErrorModelFromJson(json);
 }
