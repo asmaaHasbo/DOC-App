@@ -30,6 +30,7 @@ class DoctorListItem extends StatelessWidget {
             Text(
               doctorModelList.name ?? 'Doctor Name',
               style: AppStyles.font16W700Black21,
+              overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 5.h),
             Text(

@@ -5,7 +5,6 @@ import 'package:doc_app/features/onboarding/widgets/logo_and_title.dart';
 import 'package:doc_app/features/onboarding/widgets/stack_onboarding_doc_img.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
