@@ -1,7 +1,6 @@
 import 'city.dart';
-import 'specialization.dart';
 
-class Doctor {
+class DoctorModel {
   int? id;
   String? name;
   String? email;
@@ -11,13 +10,12 @@ class Doctor {
   String? address;
   String? description;
   String? degree;
-  Specialization? specialization;
   City? city;
   int? appointPrice;
   String? startTime;
   String? endTime;
 
-  Doctor({
+  DoctorModel({
     this.id,
     this.name,
     this.email,
@@ -27,14 +25,13 @@ class Doctor {
     this.address,
     this.description,
     this.degree,
-    this.specialization,
     this.city,
     this.appointPrice,
     this.startTime,
     this.endTime,
   });
 
-  factory Doctor.fromJson(Map<String, dynamic> json) => Doctor(
+  factory DoctorModel.fromJson(Map<String, dynamic> json) => DoctorModel(
     id: json['id'] as int?,
     name: json['name'] as String?,
     email: json['email'] as String?,
@@ -44,12 +41,7 @@ class Doctor {
     address: json['address'] as String?,
     description: json['description'] as String?,
     degree: json['degree'] as String?,
-    specialization:
-        json['specialization'] == null
-            ? null
-            : Specialization.fromJson(
-              json['specialization'] as Map<String, dynamic>,
-            ),
+
     city:
         json['city'] == null
             ? null
@@ -58,5 +50,4 @@ class Doctor {
     startTime: json['start_time'] as String?,
     endTime: json['end_time'] as String?,
   );
-
 }

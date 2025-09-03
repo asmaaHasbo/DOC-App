@@ -5,6 +5,8 @@ import 'package:doc_app/features/auth/login/data/repos/login_repo.dart';
 import 'package:doc_app/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:doc_app/features/auth/sign_up/data/repos/sign_up_repo.dart';
 import 'package:doc_app/features/auth/sign_up/logic/cubit/sign_up_cubit.dart';
+import 'package:doc_app/features/home/data/api/home_api_service.dart';
+import 'package:doc_app/features/home/data/repos/home_repo.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -15,13 +17,21 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
   //-------------- login ----------------
+  // registerLazySingleton => دي عشان يعمل اوبجكت واحد واستدعيه في كل التبيق 
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
 
+   //---registerFactory => logincupit دي عشان يعمل اوبجكت جديد في كل مره استدعي فيها ال   
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
   // api service  بتعود علي  signUpRepo اللي في القوسين بتوع ال  get it  ال
-  //------- cupit وكذلك مع ال  api service  عاوزه  login repo conctructor  لان ال
+  //cupit وكذلك مع ال  api service  عاوزه  login repo conctructor  لان ال
+
 
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
+
+  //--- home ----
+  getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
+  getIt.registerLazySingleton<HomeRepo>(()=> HomeRepo(getIt()) );
+
 }

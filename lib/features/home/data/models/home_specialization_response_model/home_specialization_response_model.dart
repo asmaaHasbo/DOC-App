@@ -1,8 +1,8 @@
-import 'datum.dart';
+import 'package:doc_app/features/home/data/models/home_specialization_response_model/specialization_mata_model.dart';
 
 class HomeSpecializationResponseModel {
   String? message;
-  List<Datum>? data;
+  List<SpecializationDataModel>? data;
   bool? status;
   int? code;
 
@@ -18,12 +18,13 @@ class HomeSpecializationResponseModel {
       message: json['message'] as String?,
       data:
           (json['data'] as List<dynamic>?)
-              ?.map((e) => Datum.fromJson(e as Map<String, dynamic>))
+              ?.map(
+                (e) =>
+                    SpecializationDataModel.fromJson(e as Map<String, dynamic>),
+              )
               .toList(),
       status: json['status'] as bool?,
       code: json['code'] as int?,
     );
   }
-
-  
 }
