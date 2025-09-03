@@ -44,7 +44,7 @@ class AppRouter {
           builder:
               (_) => BlocProvider(
                 // gitIt => دي بتجيبلي الاوبجكت اللي الاوبجكت دا عاوزه من ال get it
-                create: (context) => HomeSpecialityCubit(getIt()),
+                create: (context) => HomeSpecialityCubit(getIt())..getHomeSpecializationDoctors(),
                 child: HomeScreen(),
               ),
         );
