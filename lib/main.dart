@@ -4,7 +4,6 @@ import 'package:doc_app/doc_app.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
   await setupGetIt();
   runApp(DocApp(appRouter: AppRouter()));
 }
