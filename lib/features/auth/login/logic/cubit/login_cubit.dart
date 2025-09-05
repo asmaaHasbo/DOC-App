@@ -1,10 +1,14 @@
 // ignore_for_file: avoid_print
 
+import 'package:doc_app/core/networking/dio_factory.dart';
 import 'package:doc_app/features/auth/login/data/models/login_request_model.dart';
 import 'package:doc_app/features/auth/login/data/repos/login_repo.dart';
 import 'package:doc_app/features/auth/login/logic/cubit/login_state.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../core/helper/constant.dart';
+import '../../../../../core/helper/shared_preferences.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
@@ -27,9 +31,9 @@ class LoginCubit extends Cubit<LoginState> {
     );
 
     response.when(
-      success: (loginResponseModel) {
+      success: (loginResponseModel) async {
         print('login cupit success');
-
+        await saveUserToken(userToken: loginResponseModel.dataModel!.token);
         emit(LoginState.success(loginResponseModel));
       },
       failure: (error) {
@@ -38,5 +42,10 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.error(error: error));
       },
     );
+  }
+
+  saveUserToken({required String userToken}) async {
+    await SharedPrefHelper.setData(SharedPrefKeys.userToken, userToken);
+    DioFactory.refrshToken(token: userToken);
   }
 }

@@ -1,8 +1,7 @@
-import 'package:doc_app/features/home/ui/widgets/doctor_list_view.dart';
-import 'package:doc_app/features/home/ui/widgets/doctor_speciality_list.dart';
-import 'package:doc_app/features/home/ui/widgets/doctor_speciality_row.dart';
 import 'package:doc_app/features/home/ui/widgets/find_doctor_container.dart';
+import 'package:doc_app/features/home/ui/widgets/home_bloc_builder.dart';
 import 'package:doc_app/features/home/ui/widgets/home_top_bar.dart';
+import 'package:doc_app/features/home/ui/widgets/speciality_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,15 +25,11 @@ class HomeScreen extends StatelessWidget {
 
               SizedBox(height: 20.h),
 
-              DoctorSpecialityRow(),
+              SpecialityRow(),
 
               SizedBox(height: 20.h),
 
-              DoctorSpecialityList(),
-
-              SizedBox(height: 20.h),
-
-              DoctorListView(),
+              HomeBlocBuilder(),
             ],
           ),
         ),

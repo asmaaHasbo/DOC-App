@@ -62,7 +62,7 @@ class FindDoctorContainer extends StatelessWidget {
             right: 16.w,
             bottom: 0,
             child: Image.asset(
-              'assets/images/home_doc.png',
+              "assets/images/Image.png",
               width: 138.w,
               fit: BoxFit.cover,
             ),

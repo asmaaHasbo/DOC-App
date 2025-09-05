@@ -4,6 +4,7 @@ import 'package:doc_app/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:doc_app/features/auth/login/ui/login_screen.dart';
 import 'package:doc_app/features/auth/sign_up/logic/cubit/sign_up_cubit.dart';
 import 'package:doc_app/features/auth/sign_up/ui/sign_up_screen.dart';
+import 'package:doc_app/features/home/logic/cubit/home_cubit.dart';
 import 'package:doc_app/features/home/ui/home_screen.dart';
 import 'package:doc_app/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   //--------------- دي عباره عن داله بتعرف مسار التنقل بين الشاشات في التطبيق ---------------
-  Route generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     //--- ال settings.name هو اسم الشاشة اللي المستخدم عايز يروح ليها
     //--- هنا بنستخدم switch case عشان نحدد كل مسار من المسارات اللي موجوده في التطبيق
     //--- كل مسار بيكون ليه اسم محدد في ملف routes.dart
@@ -28,8 +29,6 @@ class AppRouter {
                 child: LoginScreen(),
               ),
         );
-      case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
 
       case Routes.signUpScreen:
         return MaterialPageRoute(
@@ -40,16 +39,19 @@ class AppRouter {
               ),
         );
 
-      default:
-        // Unknown route
+      case Routes.homeScreen:
         return MaterialPageRoute(
           builder:
-              (_) => Scaffold(
-                body: Center(
-                  child: Text('No route defined for ${settings.name}'),
-                ),
+              (_) => BlocProvider(
+                // gitIt => دي بتجيبلي الاوبجكت اللي الاوبجكت دا عاوزه من ال get it
+                create: (context) => HomeSpecialityCubit(getIt())..getHomeSpecializationDoctors(),
+                child: HomeScreen(),
               ),
         );
+
+      default:
+        // Unknown route
+        return null;
     }
   }
 }

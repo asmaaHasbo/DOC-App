@@ -1,19 +1,20 @@
+import 'package:doc_app/features/home/data/models/home_specialization_response_model/doctor_model.dart';
 import 'package:doc_app/features/home/ui/widgets/doctor_list_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DoctorListView extends StatelessWidget {
-  const DoctorListView({super.key});
+  final List<DoctorModel> doctorModelList;
+  const DoctorListView({super.key, required this.doctorModelList});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 6,
+        itemCount: doctorModelList.length,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsetsDirectional.only(top: index == 0 ? 0.0 : 16.h),
-            child: DoctorListItem(),
+          return DoctorListItem(
+            doctorModelList: doctorModelList[index],
+            itemIndex: index,
           );
         },
       ),

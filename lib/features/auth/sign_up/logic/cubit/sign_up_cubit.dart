@@ -1,8 +1,12 @@
 import 'package:bloc/bloc.dart';
+import 'package:doc_app/core/helper/shared_preferences.dart';
 import 'package:doc_app/features/auth/sign_up/data/models/sign_up_request_model.dart';
 import 'package:doc_app/features/auth/sign_up/data/repos/sign_up_repo.dart';
 import 'package:doc_app/features/auth/sign_up/logic/cubit/sign_up_state.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../../../../core/helper/constant.dart';
+import '../../../../../core/networking/dio_factory.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit(this._signUpRepo) : super(SignUpState.initial());
@@ -31,9 +35,18 @@ class SignUpCubit extends Cubit<SignUpState> {
     );
 
     response.when(
-      success: (data) => emit(SignUpState.success(data)),
+      success: (data) async {
+        await saveUserToken(userToken: data.dataModel?.token ?? '');
+        emit(SignUpState.success(data));
+      },
 
       failure: (message) => emit(SignUpState.error(error: message)),
     );
+  }
+
+  Future<void> saveUserToken({required String userToken}) async {
+    await SharedPrefHelper.setData(SharedPrefKeys.userToken, userToken);
+    DioFactory.refrshToken(token: userToken);
+
   }
 }
