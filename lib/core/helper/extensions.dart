@@ -22,3 +22,10 @@ extension Navigation on BuildContext {
     );
   }
 }
+
+extension StringExtensions on String? {
+  bool isStringNullOrEmpty() {
+    //this refers to the string on which the method is called
+    return this == null || this == '';
+  }
+}

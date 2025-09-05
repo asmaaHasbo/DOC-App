@@ -15,7 +15,7 @@ class SignUpBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
       listener: (context, state) {
-        print('Listener received state: $state');
+        debugPrint('Listener received state: $state');
 
         state.whenOrNull(
           loading: () {

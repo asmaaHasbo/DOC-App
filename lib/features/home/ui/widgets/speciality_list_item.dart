@@ -24,10 +24,14 @@ class SpecialityListItem extends StatelessWidget {
         height: 100.h,
         child: Column(
           children: [
-            CircleAvatar(
-              radius: 38.r,
-              backgroundColor: AppColors.primarySurface,
-              child: Image.asset('assets/images/brain.png'),
+            SizedBox(
+              height: 56.h,
+              width: 56.w,
+              child: CircleAvatar(
+                radius: 38.r,
+                backgroundColor: AppColors.primarySurface,
+                child: Image.asset('assets/images/brain.png'),
+              ),
             ),
             Text(
               specializationList[itemIndex].name ?? 'specialization name',

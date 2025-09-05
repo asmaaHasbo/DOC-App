@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:doc_app/features/home/data/repos/home_repo.dart';
 
+
 part 'home_state.dart';
 //homespecialite
 
@@ -24,4 +25,5 @@ class HomeSpecialityCubit extends Cubit<HomeSpecialityState> {
       },
     );
   }
+
 }

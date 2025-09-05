@@ -13,6 +13,12 @@ class HomeBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeSpecialityCubit, HomeSpecialityState>(
+      buildWhen:
+          (previous, current) =>
+              current is HomeSpecialityLoading ||
+              current is HomeSpecialitySuccess ||
+              current is HomeSpecialityFailure,
+
       builder: (context, state) {
         if (state is HomeSpecialityLoading) {
           return CircularProgressIndicator();
