@@ -17,10 +17,10 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(30.0.w),
             child: Column(
@@ -34,10 +34,10 @@ class LoginScreen extends StatelessWidget {
                   style: AppStyles.font14W400Gray75,
                 ),
                 SizedBox(height: 40.h),
-
+            
                 EmailAndPassword(),
                 SizedBox(height: 16.h),
-
+            
                 //------------------------------- forget password ----------------------
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                           value: isChecked,
                           onChanged: (value) {},
                           activeColor: Colors.green,
-
+            
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0.w),
                           ),
@@ -75,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 24.h),
-
+            
                 //----------------------------------- LOGIN BTN ----------------------
                 ElevatedButton(
                   onPressed: () {
@@ -103,13 +103,13 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.h),
-
+            
                 //--------------------------------- Terms and Conditions ----------------------
                 TermsConditions(),
-
+            
                 SizedBox(height: 24.h),
                 DontHaveAccount(),
-
+            
                 //-----------------------------------
                 LoginBlocListener(),
               ],

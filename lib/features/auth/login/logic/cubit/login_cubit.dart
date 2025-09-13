@@ -46,6 +46,5 @@ class LoginCubit extends Cubit<LoginState> {
 
   saveUserToken({required String userToken}) async {
     await SharedPrefHelper.setData(SharedPrefKeys.userToken, userToken);
-    DioFactory.refrshToken(token: userToken);
   }
 }

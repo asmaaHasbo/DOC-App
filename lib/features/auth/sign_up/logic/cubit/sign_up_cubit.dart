@@ -46,7 +46,5 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   Future<void> saveUserToken({required String userToken}) async {
     await SharedPrefHelper.setData(SharedPrefKeys.userToken, userToken);
-    DioFactory.refrshToken(token: userToken);
-
   }
 }
