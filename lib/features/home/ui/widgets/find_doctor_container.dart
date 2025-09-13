@@ -58,15 +58,15 @@ class FindDoctorContainer extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-            right: 16.w,
-            bottom: 0,
-            child: Image.asset(
-              "assets/images/Image.png",
-              width: 138.w,
-              fit: BoxFit.cover,
-            ),
-          ),
+          // Positioned(
+          //   right: 16.w,
+          //   bottom: 0,
+          //   child: Image.asset(
+          //     // "assets/images/Image.png",
+          //     width: 138.w,
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
         ],
       ),
     );
