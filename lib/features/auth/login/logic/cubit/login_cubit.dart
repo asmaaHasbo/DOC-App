@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
 
-import 'package:doc_app/core/networking/dio_factory.dart';
 import 'package:doc_app/features/auth/login/data/models/login_request_model.dart';
 import 'package:doc_app/features/auth/login/data/repos/login_repo.dart';
 import 'package:doc_app/features/auth/login/logic/cubit/login_state.dart';
@@ -45,6 +44,6 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   saveUserToken({required String userToken}) async {
-    await SharedPrefHelper.setData(SharedPrefKeys.userToken, userToken);
+    await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, userToken);
   }
 }

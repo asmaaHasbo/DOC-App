@@ -14,10 +14,10 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(30.0.w),
             child: Column(
@@ -31,11 +31,11 @@ class SignUpScreen extends StatelessWidget {
                   style: AppStyles.font14W400Gray75,
                 ),
                 SizedBox(height: 40.h),
-
+            
                 //----------- form -------------------------
                 SignUpForm(),
                 SizedBox(height: 16.h),
-
+            
                 //------------------------------- forget password ----------------------
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +46,7 @@ class SignUpScreen extends StatelessWidget {
                           value: true,
                           onChanged: (value) {},
                           activeColor: Colors.green,
-
+            
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4.0.w),
                           ),
@@ -73,7 +73,7 @@ class SignUpScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 24.h),
-
+            
                 //----------------------------------- sign up BTN ----------------------
                 ElevatedButton(
                   onPressed: () {
@@ -100,13 +100,13 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.h),
-
+            
                 //--------------------------------- Terms and Conditions ----------------------
                 TermsConditions(),
-
+            
                 SizedBox(height: 24.h),
                 DontHaveAccount(),
-
+            
                 //-----------------------------------
                 SignUpBlocListener(),
               ],

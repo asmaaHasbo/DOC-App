@@ -20,7 +20,7 @@ checkIfUserLoggedIn() async {
   // Here you can implement your logic to check if the user is logged in
   // For example, check if a valid token exists in shared preferences
   // Return true if logged in, false otherwise
-  String userToken = await SharedPrefHelper.getString(SharedPrefKeys.userToken);
+  String userToken = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
 
   if (userToken.isStringNullOrEmpty()) {
     isUserLoggedIn = false;

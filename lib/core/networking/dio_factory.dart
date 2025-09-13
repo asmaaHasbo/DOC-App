@@ -30,7 +30,7 @@ class DioFactory {
     dio!.options.headers = {
       'Accept': 'application/json',
       'Authorization':
-          "Bearer ${await SharedPrefHelper.getString(SharedPrefKeys.userToken)}", // get token from shared pref
+          "Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}", // get token from shared pref
     };
   }
 
@@ -41,7 +41,7 @@ class DioFactory {
       InterceptorsWrapper(
         onRequest: (RequestOptions options, RequestInterceptorHandler handler) async {
           // جلب التوكن من SharedPreferences قبل كل طلب
-          final token = await SharedPrefHelper.getString(SharedPrefKeys.userToken);
+          final token = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
           // إضافة التوكن للهيدر
           options.headers['Authorization'] = 'Bearer $token';
           options.headers['Accept'] = 'application/json';

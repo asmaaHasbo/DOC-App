@@ -6,7 +6,6 @@ import 'package:doc_app/features/auth/sign_up/logic/cubit/sign_up_state.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../../../core/helper/constant.dart';
-import '../../../../../core/networking/dio_factory.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit(this._signUpRepo) : super(SignUpState.initial());
@@ -45,6 +44,6 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   Future<void> saveUserToken({required String userToken}) async {
-    await SharedPrefHelper.setData(SharedPrefKeys.userToken, userToken);
+    await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, userToken);
   }
 }
